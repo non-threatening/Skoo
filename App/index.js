@@ -1,7 +1,9 @@
 import * as React from 'react';
-import {Button, Image, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import {TrackScreen} from './Tracks';
+import {HomeScreen} from './Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,19 +20,6 @@ const MyStack = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
-
-const HomeScreen = ({navigation}) => {
-  return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() => navigation.navigate('Track', {name: 'Jane'})}
-    />
-  );
-};
-
-const TrackScreen = ({navigation, route}) => {
-  return <Text>This is {route.params.name}'s profile</Text>;
 };
 
 const App = () => {
